@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}- Home{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #033669; }
+    .my-4{ align-content: left; left: 0ch;}
+  </style>
+{% endblock %}
+
+{% block content %}
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Predict your possible Credit Defaulters with high Accurracy & Save money !! </a> 
+  </div>
+</nav>
+
+<section class="predictor text-center">
+  <div class="container-fluid">
+    <h4 class="my-4 title"> For Bulk prediction provide your data in .csv fomate</h4>
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <br/>
+        <form method="post" id="datafetch_form" enctype="multipart/form-data">
+          <div class="form-group files color">
+            <input type="text" name = "csvfile" id="csvfile" class="form-control" placeholder="Enter absolute csv file/folder path." required>
+          </div>
+          <div class="">
+            <button class="form-control btn-primary" id="customfile">
+              Predict Custom File
+            </button>
+          </div>
+            <br/><h5 class="my-4 title">Else Just To see result of Default data set Click below</h5>
+            <button class="form-control btn-primary mb-5" id="defaultfile" data-path = "Prediction_Batch_files">
+              Predict Default File 
+            </button>
+        </form>
+      </div>
+      <div class="res-container  col-md-6 col-xs-12">
+        <div class="result-box shadow rounded-lg">
+          <h6 class="title">Results</h6>
+          <div class="json-result">
+            
+          </div>
+        </div>
+      </div>
+    </div>						
+  </div>
+</section>
+
+<div id="loading"><div class="loader"></div></div>
+
+{% endblock %}

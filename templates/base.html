@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="description" content="ML web application To predict Credit Default Prediction">
+    <meta name="keywords" content="Creditdefault, CreditCard, ML, defaultprediction,machine learning">
+    <meta name="author" content="Atul Gaikwad">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Default Predictor {% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    
+    <!--compiled code for Bootstrap v4.4.1-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+	  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container-fluid" id="footer">
+        {% block footer %}
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center my-auto mx-auto">
+            <ul class="list-inline mb-1">
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item"><a href="https://github.com/atulgaikwad12/creditdefultprediction/" target="_blank">Github Repository</a></li>
+              <li class="list-inline-item">&sdot;</li>
+            </ul>
+            <p class="text-muted small mb-2 mb-lg-0">&copy; Developed by <a href="https://www.linkedin.com/in/atul-gaikwad12/" target="_blank">Atul Gaikwad</a>. Under <a href="https://internship.ineuron.ai/" target="_blank">iNeuron.ai</a> internship program</p>
+          </div>
+        </div>
+        {% endblock %}
+      </div>
+    </footer>
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    <script src="{{ url_for('static', filename='js/main.js') }}" ></script>
+    {% endblock %}
+  </body>
+</html>

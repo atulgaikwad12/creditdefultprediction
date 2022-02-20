@@ -77,6 +77,11 @@ conda env list
 activate <envName>
 ```
 
+`Conda command to create virtual env inside current directly`
+```
+conda create --prefix ./env python=3.7 -y && conda activate ./env
+```
+
 `To install required libraries listed inside requirements.txt `
 ```buildoutcfg
 pip install requirements.txt
@@ -88,14 +93,15 @@ conda list
 pip freeze>requirements.txt
 ```
 
-`Git commands to publish code (remote repo - "origin", local branch default name -  "master") `
+`Git commands to publish code (remote repo - "origin", local branch default name -  "master", renamed to "main") `
 ```buildoutcfg 
 git init 
 git add .
 git commit -m 'First Commit Msg'
 git status 
 git remote add origin git@github.com:username/new_repo
-git push -u origin master
+git branch -m master main
+git push -u origin main
 ```
 
 ### Extra git commands just for reference
@@ -188,3 +194,8 @@ git reset
 ```
 git reset
 ```
+`Git add and commit in same command`
+```
+git commit -a -m "message"
+```
+
