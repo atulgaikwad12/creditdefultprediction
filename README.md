@@ -59,25 +59,7 @@ Lichman, M. (2013). [UCI Machine Learning Repository](http://archive.ics.uci.edu
 
 ---
 ## Project Installation Steps :-
-
-`If using git bash then activate base using below command`
-```buildoutcfg
-source activate base
-```
-
-`Else for cmd use`
-```
-conda activate base
-```
-
- `To Create Conda Enviroment and activate it` 
-```buildoutcfg
-conda create -n <envName> python=3.7 -y
-conda env list
-activate <envName>
-```
-
-`Conda command to create virtual env inside current directly`
+`Conda command to create virtual env inside current directory`
 ```
 conda create --prefix ./env python=3.7 -y && conda activate ./env
 ```
@@ -88,9 +70,9 @@ pip install requirements.txt
 conda list
 ```
 
-`To freeze requirements.txt`
-```buildoutcfg
-pip freeze>requirements.txt
+`To create conda.yaml file which will be used by mlflow`
+```bash
+conda env export > conda.yaml
 ```
 
 `Git commands to publish code (remote repo - "origin", local branch default name -  "master", renamed to "main") `
@@ -104,98 +86,20 @@ git branch -m master main
 git push -u origin main
 ```
 
-### Extra git commands just for reference
-`Stash changes to clean working tree (so to work with new changes keeping old changes stored temporay aside)`
+`MlFlow command to run Project`
+`To consider default entry point main`
+```bash
+mlflow run . --no-conda
 ```
-git status
-git stash
+`run any specific entry point in MLproject file`
+```bash
+mlflow run . -e get_data --no-conda
 ```
-`Clean stash & again apply to working tree`
+`Passing config file overriding the defult defined inside MLproject file`
+```bash
+mlflow run . -e get_data -P config=configs/your_config.yaml --no-conda
 ```
-git status
-git stash pop
+`Defining experiment name` 
+```bash
+mlflow run . -e main --experiment-name firstime --no-conda
 ```
-`Reapply stash without cleaning it`
-```
-git status
-git stash apply
-```
-
-`Sync local repository with remote one (remote repo - origin)`
-```
-git diff
-git fetch origin
-git log --oneline main..origin/main
-git checkout main
-git log origin/main
-git merge origin/main
-```
-
-`Remove file from stagging area`
-```
-git status
-git rm --cached fileName
-```
-
-`To see last commit log (press q to quit)`
-```
-git log -p -1
-```
-
-`To see summarized status`
-```
-git status -s
-```
-
-`To create new branch and switch to it`
-```
-git branch <newbranchnaame>
-git branch
-git checkout <newbranchName>
-```
-`Alternate way to do same `
-```
-git checkout - b <newBranchName>
-```
-
-`To merge new branch changes to master`
-```
-git checkout master
-git merge <newbranchname>
-```
-
-`Clone any repository in local`
-```
-git clone <repo_url> <optional_foldename>
-``` 
-
-`To see merged/Non merged branch`
-```
-git branch --merged
-git branch --non-merged
-```
-
-`To delete merged branch`
-```
-git branch -d <BranchName>
-```
-
-`To delete non merged branch`
-```
-git branch -D <BranchName>
-```
-
-`To unstage files from staging area not changing working directory so to match last commit`
-```
-git reset
-```
-
-`To unstage files from staging area as well as from working directory so to match last commit`
-```
-git reset
-```
-`Git add and commit in same command`
-```
-git commit -a -m "message"
-```
-
