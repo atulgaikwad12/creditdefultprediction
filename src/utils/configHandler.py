@@ -5,7 +5,11 @@ import os.path as path
 class configHandler:
     
     def __init__(self) -> None:
-        self.config_path = path.join("config/","config.yaml")
+        
+        config_dir = "config/"
+        config_file = "config.yaml"
+
+        self.config_path = path.join(config_dir,config_file)
         if(path.isfile(self.config_path)):
             self.config = self.read_yaml(self.config_path)
         else:

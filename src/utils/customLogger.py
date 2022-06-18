@@ -22,11 +22,11 @@ class customLogger:
             self.BASE_LOG_DIR = cf.section('BASE_LOG_DIR')
             self.ENVIRONMENT = cf.section('ENVIRONMENT')
             print(f"Logging for appname= {self.appname}")
-            if(self.appname == "TRAINNING"):
-                TRAINNING = cf.section("TRAINNING_LOG")
-                self.log_dir = TRAINNING['DIRECTORY']
-                self.file_base_name = TRAINNING['FILE_NAME']
-                self.level = TRAINNING['LEVEL']
+            if(self.appname == "TRAINING"):
+                TRAINING = cf.section("TRAINING_LOG")
+                self.log_dir = TRAINING['DIRECTORY']
+                self.file_base_name = TRAINING['FILE_NAME']
+                self.level = TRAINING['LEVEL']
             else:
                 PREDICTION_LOG = cf.section("PREDICTION_LOG")
                 self.log_dir = PREDICTION_LOG['DIRECTORY']

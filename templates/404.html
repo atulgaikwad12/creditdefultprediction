@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %} Page Not Found {% endblock %}
+{% block content %}
+ <h1>404 Error :(</h1>
+ <p> Invalid Request !!<p>
+ <a href="{{ url_for('home') }}">Click here to reach home page</a>
+{% endblock %}

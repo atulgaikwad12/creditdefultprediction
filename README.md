@@ -103,3 +103,12 @@ mlflow run . -e get_data -P config=configs/your_config.yaml --no-conda
 ```bash
 mlflow run . -e main --experiment-name firstime --no-conda
 ```
+`Command for mlflow UI portal (-p portnumber is optional)` 
+```bash
+mlflow ui -p portnumber
+```
+
+`Extra mlflow cmd for ref`
+```bash
+mlflow models serve -m runs:/runid/model -p portnumber
+```

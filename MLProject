@@ -6,10 +6,10 @@ entry_points:
   main:
     command: "python src/train_pipeline.py"
 
-  get_data:
+  validate_data:
     parameters:
-      config: {type: str, default: "configs/config.yaml"}
-    command: "python src/stage_01_get_data.py --config={config}"
+      src_path: {type: str, default: "default_dataset/UCI_Credit_Card.csv"}
+    command: "python src/stage_01_validate_data.py --srcpath={src_path}"
 
   base_model_creation:
     parameters:

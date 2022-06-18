@@ -4,6 +4,12 @@ mlflow
 pandas
 numpy
 PyYAML
+Flask
+Flask-Cors
+gunicorn
+Jinja2
+matplotlib
+dnspython==1.16.0
 
 ### to install local packages -
 -e . 
